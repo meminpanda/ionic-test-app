@@ -27,7 +27,9 @@ export class ListaDeseosService {
   }
 
   cargarData(){
-    this.listas = JSON.parse(localStorage.getItem("data"));
+    if(localStorage.getItem("data")){
+      this.listas = JSON.parse(localStorage.getItem("data"));
+    }
   }
 
   agregarLista( lista:Lista ){
