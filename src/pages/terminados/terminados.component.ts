@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ListaDeseosService } from '../../app/services/lista-deseos.service';
+
 import { NavController } from 'ionic-angular';
+import { DetalleComponent } from '../detalle/detalle.component';
 
 
 @Component({
@@ -7,7 +10,12 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'terminados.html',
 })
 export class TerminadosComponent implements OnInit {
-  constructor(public navCtrl: NavController) {  }
+  constructor( private _listaDeseos:ListaDeseosService,
+                private navCtrl: NavController) {  }
 
   ngOnInit() {}
+
+  verDetalle( lista, idx ){
+    this.navCtrl.push( DetalleComponent, { lista, idx } );
+  }
 }

@@ -37,4 +37,8 @@ export class ListaDeseosService {
     this.actualizarData();
   }
 
+  borrarLista(idx:number){
+      this.listas.splice(idx, 1);
+      this.actualizarData();
+  }
 }
